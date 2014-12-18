@@ -1,0 +1,9 @@
+<?php
+/*
+To make shipping method from radio to dropdown copy this file at this location:-
+app/design/frontend/base/default/template/checkout/onepage/shipping_method/additional.phtml
+*/
+?>
+<?php if (!$this->getQuote()->isVirtual()): ?>
+    <?php echo $this->helper('giftmessage/message')->getInline('onepage_checkout', $this->getQuote(), $this->getDontDisplayContainer()) ?>
+<?php endif; ?>
