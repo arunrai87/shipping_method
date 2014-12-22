@@ -72,16 +72,14 @@ app/design/frontend/base/default/template/checkout/onepage/shipping_method/avail
 		} ?>
 	</select>
 <script type="text/javascript">
-	document.observe("dom:loaded", function() {
-		$('dropDownShipping').observe('change',function(){
-			if($('dropDownShipping').getValue() == -1){
-				alert('Please Select Shipping Method');
+	jQuery('#dropDownShipping').change(function(){
+		var selectVal = jQuery('#dropDownShipping option:selected').val()
+			if(selectVal == -1){
+				alert('Please Select Shipping Method');			
 			}else{
-				var value = $('dropDownShipping').getValue();				
-				 $('s_method_'+value).click();				
+			 jQuery('#s_method_'+selectVal).click();				
 			}
 		});
-	});
 </script>
 <script type="text/javascript">
 //<![CDATA[
