@@ -72,16 +72,6 @@ app/design/frontend/base/default/template/checkout/onepage/shipping_method/avail
 		} ?>
 	</select>
 <script type="text/javascript">
-	jQuery('#dropDownShipping').change(function(){
-		var selectVal = jQuery('#dropDownShipping option:selected').val()
-			if(selectVal == -1){
-				alert('Please Select Shipping Method');			
-			}else{
-			 jQuery('#s_method_'+selectVal).click();				
-			}
-		});
-</script>
-<script type="text/javascript">
 //<![CDATA[
     <?php if (!empty($shippingCodePrice)): ?>
         var shippingCodePrice = {<?php echo implode(',',$shippingCodePrice); ?>};
@@ -107,6 +97,14 @@ app/design/frontend/base/default/template/checkout/onepage/shipping_method/avail
             }
        });
     });
+jQuery('#dropDownShipping').change(function(){
+		var selectVal = jQuery('#dropDownShipping option:selected').val()
+			if(selectVal == -1){
+				alert('Please Select Shipping Method');			
+			}else{
+			 jQuery('#s_method_'+selectVal).click();				
+			}
+	});
 //]]>
 </script>
 <?php endif; ?>
